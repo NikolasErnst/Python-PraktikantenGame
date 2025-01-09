@@ -59,7 +59,7 @@ class Player(Entity):
     def update(self, dt):
         self.input()  # Nur der Player sollte Eingabe haben
         self.move(dt)
-        self.animate(dt)
+        self.animate(dt)  
 
 
 class Character(Entity):       
@@ -69,7 +69,6 @@ class Character(Entity):
 
     # Keine Eingabemethoden für Character
     def move(self, dt):
-        # Vielleicht möchtest du hier eine KI oder eine automatische Bewegung implementieren
         self.rect.center += self.direction * 250 * dt
 
     def update(self, dt):

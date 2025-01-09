@@ -8,6 +8,7 @@ class Game:
     # generell
     def __init__(self):
         pygame.init()
+        self.clock = pygame.time.Clock()
         self.display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         pygame.display.set_caption('Atruvimon')
 
@@ -33,6 +34,11 @@ class Game:
         self.index_open = False
         self.battle = None
         self.evolution = None
+        
+        
+        #trash for testing
+        color = (255, 0, 0)
+        self.display_surface.fill(color)
 
 
     def import_assets(self):
@@ -44,10 +50,15 @@ class Game:
             print(x* TILE_SIZE,y *TILE_SIZE,surf)
             
             
-        
+    def input(self):
+        keys = pygame.key.get_pressed() 
+        if keys[pygame.K_SPACE]:
+            self.index_open = not self.index_open
+            
     # loop 
     def run(self):
         while True:
+            dt = self.clock.tick() / 1000
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -55,7 +66,11 @@ class Game:
 
             # logik
             pygame.display.update()
-
+            self.input() 
+            
+            #overlays
+            if self.index_open: self.monster_index.update(dt)
+            
 
 if __name__ == '__main__':
     game = Game()

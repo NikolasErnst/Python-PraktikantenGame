@@ -1,6 +1,8 @@
 from settings import *
 
-# hier speichern wir alle Player
+# hier speichern wir alle Characters
+
+
 
 
 # unser basic Player

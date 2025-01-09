@@ -1,6 +1,9 @@
 from settings import *
 from pytmx.util_pygame import load_pygame
 from os.path import join
+from monster import Monster
+from monsterIndex import MonsterIndex
+
 class Game:
     # generell
     def __init__(self):
@@ -10,6 +13,27 @@ class Game:
 
         self.import_assets()
         self.setup(self.tmx_maps['world'],'house')
+        
+	    # player monsters 
+        self.player_monsters = {
+			0: Monster('Plumette', 31),
+		}      
+        
+        #fonts
+        self.fonts = {
+			'dialog': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 30),
+			'regular': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 18),
+			'small': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 14),
+			'bold': pygame.font.Font(join('..', 'graphics', 'fonts', 'dogicapixelbold.otf'), 20),
+		}
+        
+        # overlays 
+        self.dialog_tree = None
+        self.monster_index = MonsterIndex(self.player_monsters, self.fonts)
+        self.index_open = False
+        self.battle = None
+        self.evolution = None
+
 
     def import_assets(self):
         self.tmx_maps = {'world': load_pygame(join('..','data','maps','world.tmx'))}
@@ -18,6 +42,7 @@ class Game:
     def setup(self, tmx_map, player_start_pos):
         for x,y,surf in  tmx_map.get_layer_by_name('Terrain').tiles():
             print(x* TILE_SIZE,y *TILE_SIZE,surf)
+            
             
         
     # loop 

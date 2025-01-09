@@ -1,17 +1,30 @@
 from settings import *
 
-# hier speichern wir alle Characters
 
+# Parent für Player und alle anderen Characters
+class Entity(pygame.sprite.Sprite):
+    def __init__(self, pos, frames, groups):
+        super().__init__(groups)
 
+        # graphics
+        self.frame_index, self.frames = 0, frames
+        
+        # self.direction = vector()
+        # self.speed = 250
+        # self.blocked = False
+        
+        # sprite setup
+        self.image = self.frames['down'][self.frame_index]
+        self.rect = self.image.get_frect(center=pos)
+        # self.hitbox = self.rect.inflate(-self.rect.width / 2, -60)
+
+        # self.y_sort = self.rect.centery
 
 
 # unser basic Player
-class Player(pygame.sprite.Sprite):
-    def __init__(self, pos, groups):
-        super().__init__(groups)
-        self.image = pygame.Surface((100, 100))
-        self.image.fill("red")
-        self.rect = self.image.get_frect(center=pos)
+class Player(Entity):
+    def __init__(self, pos, frames, groups):
+        super().__init__(pos, frames, groups)
 
         self.direction = vector()
 

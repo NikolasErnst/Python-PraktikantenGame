@@ -42,7 +42,7 @@ class Game:
 
             # logik
             self.all_sprites.update(dt)
-            self.all_sprites.draw(self.display_surface)
+            self.all_sprites.draw(self.player.rect.center)
             pygame.display.update()
 
 

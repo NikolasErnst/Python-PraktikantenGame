@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="9" height="12" tilewidth="64" tileheight="64" infinite="0" nextlayerid="11" nextobjectid="19">
- <tileset firstgid="1" source="../tilesets/world.tsx"/>
- <tileset firstgid="211" source="../tilesets/objects.tsx"/>
- <tileset firstgid="242" source="../tilesets/indoor.tsx"/>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="9" height="12" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="23">
+ <tileset firstgid="1" source="world.tsx"/>
+ <tileset firstgid="1" source="objects.tsx"/>
+ <tileset firstgid="1" source="indoor.tsx"/>
  <layer id="1" name="Terrain" width="9" height="12">
   <data encoding="csv">
-247,248,248,248,248,248,248,248,249,
-277,258,258,270,271,258,258,258,259,
-277,268,268,280,281,268,268,268,269,
-277,278,278,278,278,278,278,278,279,
-277,288,288,288,288,288,288,288,289,
-277,288,288,288,288,288,288,288,279,
-277,288,288,288,288,288,288,288,279,
-277,288,288,288,288,288,288,288,279,
-277,288,288,288,288,288,288,288,279,
-277,288,288,288,288,288,288,288,279,
-277,288,288,288,288,288,288,288,279,
-297,298,260,261,298,298,298,298,299
+6,7,7,7,7,7,7,7,8,
+36,17,17,29,30,17,17,17,18,
+36,27,27,39,40,27,27,27,28,
+36,37,37,71,37,37,37,37,38,
+36,47,47,71,47,47,47,47,48,
+36,47,47,81,62,47,72,82,38,
+36,47,47,47,47,47,47,47,38,
+36,47,47,47,47,47,47,47,38,
+36,47,47,47,47,47,47,47,38,
+36,47,47,47,47,47,47,47,38,
+36,47,47,47,47,47,47,47,38,
+56,57,19,20,57,57,57,57,58
+</data>
+ </layer>
+ <layer id="12" name="Häuser" width="9" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <layer id="10" name="Terrain Top" width="9" height="12">
@@ -43,16 +59,27 @@
    </properties>
    <point/>
   </object>
+  <object id="19" name="Character" x="352.483" y="329.594">
+   <properties>
+    <property name="change_direction" type="bool" value="true"/>
+    <property name="character_id" value="mitarbeiter1"/>
+    <property name="direction" value="down"/>
+    <property name="graphic" value="straw"/>
+    <property name="radius" value="400"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="Coast"/>
  <objectgroup id="7" name="Water"/>
  <objectgroup id="8" name="Monsters"/>
- <objectgroup id="9" name="Collisions">
+ <objectgroup id="9" name="Collisions" visible="0">
   <object id="13" x="-58" y="72.6667" width="118" height="685.333"/>
   <object id="14" x="515.333" y="92.6667" width="81.3333" height="680"/>
   <object id="15" x="70.6667" y="43.3333" width="442" height="146.667"/>
   <object id="17" x="67.3333" y="670" width="89.3333" height="54.6667"/>
   <object id="18" x="226.667" y="670.667" width="282.667" height="54.6667"/>
+  <object id="20" x="195.198" y="191.245" width="318.231" height="191.553"/>
  </objectgroup>
  <objectgroup id="3" name="Objects"/>
  <objectgroup id="5" name="Transition">

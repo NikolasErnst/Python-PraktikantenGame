@@ -1,343 +1,226 @@
 TRAINER_DATA = {
-	'o1': {
-		'monsters': {0: ('Jacana', 14), 1: ('Cleaf', 15)},
+	'hat_girl': {
+	# 	Vertriebler
 		'dialog': {
-			'default': ['Hey, how are you?', 'Oh, so you want to fight?', 'FIGHT!'], 
-			'defeated': ['You are very strong!', 'Let\'s fight again sometime?']},
+			'default': ['Ich bin Vertriebler.', 'Ich habe dual Wirtschaftsinformatik Sales & Consulting studiert.', 'Jetzt bin ich in Neukundenaquise und Kundenbetreeung tätig.'],
+			'defeated': ['']},
 		'directions': ['down'],
-		'look_around': True,
+		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
-	'o2': {
-		'monsters': {0: ('Atrox', 14), 1: ('Pouch', 15), 2: ('Draem', 13), 3: ('Cindrill', 13)},
+        
+	'blond': {
+	#	Anwendungsentwickler
 		'dialog': {
-			'default': ['I don\'t like sand', 'It\'s coarse and rough', 'oh god, fight'], 
-			'defeated': ['May the force be with you']},
+			'default': ['Ich bin Anwendungsentwickler.', 'Ich habe eine Ausbildung zum Anwendungsentwickler gemacht.', 'Jetzt fixe ich Bugs und entwickle neue Features.'], 
+			'defeated': ['']},
 		'directions': ['left', 'down'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'sand'
 		},
-	'o3': {
-		'monsters': {0: ('Atrox', 14), 1: ('Pouch', 15), 2: ('Draem', 13), 3: ('Cindrill', 13)},
+	'straw': {
+    # 	Data Scientist
 		'dialog': {
-			'default': ['I love skating!', 'FIGHT!'], 
-			'defeated': ['Good luck with the boss', 'It\'s so cold in here']},
+			'default': ['Ich bin Data Scientist.', 'Ich habe dual Data Science studiert.', 'Jetzt verarbeite ich Daten und werte sie aus.'], 
+			'defeated': ['']},
 		'directions': ['left', 'right', 'up', 'down'],
-		'look_around': True,
+		'look_around': False,
 		'defeated': False,
 		'biome': 'sand'
-		},
-	'o4': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+		}, 
+
+	'Cyber Defender': {
+    #	Cyber Defender
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love skating!', 'FIGHT!'], 
-			'defeated': ['Good luck with the boss', 'It\'s so cold in here']},
+			'default': ['Ich bin Cyber Defender.', 'Ich habe dual Cyber Security studiert.', 'Jetzt bin ich im Monitoring tätig und durchforste das Darkweb.'], 
+			'defeated': ['']},
 		'directions': ['right'],
-		'look_around': True,
+		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
-	'o5': {
-		'monsters': {0: ('Plumette', 20), 1: ('Ivieron', 22), 2: ('Atrox',24), 3: ('Pouch', 19)},
+	'Softwareengineer': {
+    #Softwareengineer
+	#	'monsters': {0: ('Plumette', 20), 1: ('Ivieron', 22), 2: ('Atrox',24), 3: ('Pouch', 19)},
 		'dialog': {
-			'default': ['I love skating!', 'FIGHT!'], 
-			'defeated': ['Good luck with the boss', 'It\'s so cold in here']},
+			'default': ['Ich bin Softwareengineer.', 'Ich habe dual Wirtschaftsinformatik Softwareengineering studiert.', 'Jetzt konzipiere ich Systeme und halte sie am Laufen.'], 
+			'defeated': ['']},
 		'directions': ['up', 'right'],
-		'look_around': True,
+		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
-	'o6': {
-		'monsters': {0: ('Finsta', 15), 1: ('Finsta', 15), 2: ('Finsta', 15)},
+	'Systemintegrator': {
+    #	Systemintegrator
+	#	'monsters': {0: ('Finsta', 15), 1: ('Finsta', 15), 2: ('Finsta', 15)},
 		'dialog': {
-			'default': ['I love skating!', 'FIGHT!'], 
-			'defeated': ['Good luck with the boss', 'It\'s so cold in here']},
+			'default': ['Ich bin Systemintegrator.', 'Ich habe eine Ausbildung für Fachinformatiker für Systemintegration gemacht.', 'Jetzt mache ich den Support für Anwendungen.'], 
+			'defeated': ['']},
 		'directions': ['down'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'ice'
 		},
 	'o7': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Anfangsdialog 
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['There are no bugs in the snow!'], 
-			'defeated': ['Maybe I should check a vulcano...', 'It\'s so cold in here']},
+			'default': ['Herzlich Willkommen auf dem Campus der Atruvia AG!', 'Du kannst dich hier frei bewegen.', 'Auf dem Campus sind Mitarbeiter beschäftigt.', 'Sprich sie an, um zu erfahren was ihre Aufgaben sind.', 'Danach werden sie deinem Team hinzugefügt.', 'Heute gibt es einige Probleme und Störungen.', 'Diese musst du aufspüren und identfizieren.',
+               'Wenn du das Problem identifiziert hast, musst du es mit dem passenden Mitarbeiter lösen.', 'Nach erfolgreichem Lösen aller Probleme erreichst du den Endboss.', 'Dort musst du Martin Beyer von deiner Festanstellung bei Atruvia überzeugen.', 'Viel Erfolg!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'ice'
 		},
 	'p1': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Problem 1 Systemintegrator
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love trees', 'and fights'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
 	'p2': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Problem 2 Vertriebler
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love trees', 'and fights'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
 	'p3': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Problem 3 Cyber Defender
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love trees', 'and fights'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
 	'p4': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Problem 4 Softwareengineer
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love trees', 'and fights'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
 	'px': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
+    #	Problem 5 Data-Scientist
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['I love trees', 'and fights'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['right'],
 		'look_around': False,
 		'defeated': False,
 		'biome': 'forest'
 		},
 	'w1': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
+    #	Problem 6 Anwendungsentwickler
+	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
 		'dialog': {
-			'default': ['It\'s so cold in here', 'maybe a fight will warm me up'], 
-			'defeated': ['Good luck with the boss!']},
+			'default': ['Problem!'], 
+			'defeated': ['']},
 		'directions': ['left'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'w2': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
-		'dialog': {
-			'default': ['It\'s so cold in here', 'maybe a fight will warm me up'], 
-			'defeated': ['Good luck with the boss!']},
-		'directions': ['right'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'w3': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
-		'dialog': {
-			'default': ['It\'s so cold in here', 'maybe a fight will warm me up'], 
-			'defeated': ['Good luck with the boss!']},
-		'directions': ['left'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'w4': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
-		'dialog': {
-			'default': ['It\'s so cold in here', 'maybe a fight will warm me up'], 
-			'defeated': ['Good luck with the boss!']},
-		'directions': ['right'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'w5': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
-		'dialog': {
-			'default': ['It\'s so cold in here', 'maybe a fight will warm me up'], 
-			'defeated': ['Good luck with the boss!']},
-		'directions': ['left'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'wx': {
-		'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Draem',24), 3: ('Finiette', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['down'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'ice'
-		},
-	'f1': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['right'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'f2': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['right', 'left'],
 		'look_around': False,
 		'defeated': False,
-		'biome': 'sand'
+		'biome': 'ice'
 		},
-	'f3': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['right', 'left'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'f4': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['up', 'right'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'f5': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['left'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'f6': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['This place feels kinda warm...', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['right'],
-		'look_around': True,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'fx': {
-		'monsters': {0: ('Cindrill', 15), 1: ('Jacana', 20), 2: ('Draem',24), 3: ('Atrox', 30)},
-		'dialog': {
-			'default': ['Time to bring the heat', 'fight!'], 
-			'defeated': ['Congratultion!']},
-		'directions': ['down'],
-		'look_around': False,
-		'defeated': False,
-		'biome': 'sand'
-		},
-	'Nurse': {
-		'direction': 'down',
-		'radius': 0,
-		'look_around': False,
-		'dialog': {
-			'default': ['Welcome to the hospital', 'Your monsters have been healed'], 
-			'defeated': None},
-		'directions': ['down'],
-		'defeated': False,
-		'biome': None
+
 		}
-}
 
 MONSTER_DATA = {
 	'Plumette': {
-		'stats': {'element': 'plant', 'max_health': 15, 'max_energy': 17, 'attack': 4, 'defense': 8, 'recovery': 5, 'speed': 1},
+		'stats': {'element': 'plant', 'max_health': 15, 'max_energy': 17, 'attack': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
 		'abilities': {0: 'scratch', 5: 'spark'},
 		'evolve': ('Ivieron', 15)},
 	'Ivieron': {
-		'stats': {'element': 'plant', 'max_health': 18, 'max_energy': 20, 'attack': 5, 'defense': 10, 'recovery': 6, 'speed': 1.2},
+		'stats': {'element': 'plant', 'max_health': 18, 'max_energy': 20, 'attack': 5, 'defense': 10, 'recovery': 1.2, 'speed': 1.2},
 		'abilities': {0: 'scratch', 5: 'spark'},
 		'evolve': ('Pluma', 32)},
 	'Pluma': {
-		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 25, 'attack': 6, 'defense': 12, 'recovery': 7, 'speed': 1.8},
+		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 26, 'attack': 6, 'defense': 12, 'recovery': 1.8, 'speed': 1.8},
 		'abilities': {0: 'scratch', 5: 'spark'},
 		'evolve': None},
 	'Sparchu': {
-		'stats': {'element': 'fire', 'max_health': 15, 'max_energy': 17, 'attack': 3, 'defense': 8, 'recovery': 5, 'speed': 1},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'fire', 'max_health': 15, 'max_energy': 7, 'attack': 3, 'defense': 8, 'recovery': 1.1, 'speed': 1},
+		'abilities': {0: 'scratch', 5: 'fire', 15: 'battlecry', 26:'explosion'},
 		'evolve': ('Cindrill', 15)},
 	'Cindrill': {
-		'stats': {'element': 'fire', 'max_health': 18, 'max_energy': 20, 'attack': 4, 'defense': 10, 'recovery': 6, 'speed': 1.2},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'fire', 'max_health': 18, 'max_energy': 10, 'attack': 3.5, 'defense': 10, 'recovery': 1.2, 'speed': 1.1},
+		'abilities': {0: 'scratch', 5: 'fire', 15: 'battlecry', 26:'explosion'},
 		'evolve': ('Charmadillo', 33)},
 	'Charmadillo': {
-		'stats': {'element': 'fire', 'max_health': 27, 'max_energy': 23, 'attack': 6, 'defense': 17, 'recovery': 7, 'speed': 1.5},
-		'abilities': {0: 'scratch', 5: 'fire', 10:'explosion', 12: 'battlecry', 20:'annihilate'},
+		'stats': {'element': 'fire', 'max_health': 29, 'max_energy': 12, 'attack': 4, 'defense': 17, 'recovery': 1.35, 'speed': 1.1},
+		'abilities': {0: 'scratch', 5: 'fire', 15: 'battlecry', 26:'explosion', 45: 'annihilate'},
 		'evolve': None},
 	'Finsta': {
-		'stats': {'element': 'water', 'max_health': 13, 'max_energy': 17, 'attack': 2, 'defense': 8, 'recovery': 5, 'speed': 1.8},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'water', 'max_health': 13, 'max_energy': 17, 'attack': 2, 'defense': 8, 'recovery': 1.5, 'speed': 1.8},
+		'abilities': {0: 'scratch', 5: 'spark', 15: 'splash', 20: 'ice', 25: 'heal'},
 		'evolve': ('Gulfin', 34)},
 	'Gulfin': {
-		'stats': {'element': 'water', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 6, 'speed': 2},
-		'abilities': {0: 'scratch', 5: 'spark'},
-		'evolve': ('Finiette', 32)},
+		'stats': {'element': 'water', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 1.8, 'speed': 2},
+		'abilities': {0: 'scratch', 5: 'spark', 15: 'splash', 20: 'ice', 25: 'heal'},
+		'evolve': ('Finiette', 45)},
 	'Finiette': {
-		'stats': {'element': 'water', 'max_health': 27, 'max_energy': 23, 'attack': 4, 'defense': 17, 'recovery': 7, 'speed': 2.5},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'water', 'max_health': 27, 'max_energy': 23, 'attack': 4, 'defense': 17, 'recovery': 2, 'speed': 2.5},
+		'abilities': {0: 'scratch', 5: 'spark', 15: 'splash', 20: 'ice', 25: 'heal'},
 		'evolve': None},
 	'Atrox': {
-		'stats': {'element': 'fire', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 6, 'speed': 1.9},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'fire', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 1.3, 'speed': 1.9},
+		'abilities': {0: 'scratch', 5: 'spark', 30: 'fire'},
 		'evolve': None},
 	'Pouch': {
-		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 25, 'attack': 4, 'defense': 12, 'recovery': 7, 'speed': 1.5},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 25, 'attack': 4, 'defense': 12, 'recovery': 1, 'speed': 1.5},
+		'abilities': {0: 'scratch', 5: 'spark', 25: 'heal'},
 		'evolve': None},
 	'Draem': {
-		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 25, 'attack': 4, 'defense': 12, 'recovery': 7, 'speed': 1.4},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'plant', 'max_health': 23, 'max_energy': 25, 'attack': 4, 'defense': 12, 'recovery': 1.2, 'speed': 1.4},
+		'abilities': {0: 'scratch', 5: 'heal', 20: 'explosion', 25: 'splash'},
 		'evolve': None},
 	'Larvea': {
-		'stats': {'element': 'plant', 'max_health': 15, 'max_energy': 17, 'attack': 1, 'defense': 8, 'recovery': 5, 'speed': 1},
+		'stats': {'element': 'plant', 'max_health': 15, 'max_energy': 17, 'attack': 1, 'defense': 8, 'recovery': 1, 'speed': 1},
 		'abilities': {0: 'scratch', 5: 'spark'},
 		'evolve': ('Cleaf', 4)},
 	'Cleaf': {
-		'stats': {'element': 'plant', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 6, 'speed': 1.6},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'plant', 'max_health': 18, 'max_energy': 20, 'attack': 3, 'defense': 10, 'recovery': 1.7, 'speed': 1.6},
+		'abilities': {0: 'scratch', 5: 'heal'},
 		'evolve': None},
 	'Jacana': {
-		'stats': {'element': 'fire', 'max_health': 12, 'max_energy': 19, 'attack': 3, 'defense': 10, 'recovery': 6, 'speed': 2.6},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'fire', 'max_health': 12, 'max_energy': 19, 'attack': 3, 'defense': 10, 'recovery': 2.1, 'speed': 2.6},
+		'abilities': {0: 'scratch', 5: 'spark', 15: 'burn', 20: 'explosion', 25: 'heal'},
 		'evolve': None},
 	'Friolera': {
-		'stats': {'element': 'water', 'max_health': 27, 'max_energy': 23, 'attack': 4, 'defense': 17, 'recovery': 7, 'speed': 2},
+		'stats': {'element': 'water', 'max_health': 13, 'max_energy': 20, 'attack': 4, 'defense': 6, 'recovery': 1.3, 'speed': 2},
 		'abilities': {0: 'scratch', 5: 'spark', 15: 'splash', 20: 'ice', 25: 'heal'},
 		'evolve': None},
 }
 
 ATTACK_DATA = {
 	'burn':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'fire',   'animation': 'fire'},
-	'heal':       {'target': 'player',   'amount': -1.2, 'cost': 15, 'element': 'plant',  'animation': 'green'},
-	'battlecry':  {'target': 'player',   'amount': 1.4,  'cost': 20, 'element': 'normal', 'animation': 'green'},
+	'heal':       {'target': 'player',   'amount': -1.2, 'cost': 600, 'element': 'plant',  'animation': 'green'},
+	'battlecry':  {'target': 'player',   'amount': -1.4, 'cost': 20, 'element': 'normal', 'animation': 'green'},
 	'spark':      {'target': 'opponent', 'amount': 1.1,  'cost': 20, 'element': 'fire',   'animation': 'fire'},
 	'scratch':    {'target': 'opponent', 'amount': 1.2,  'cost': 20, 'element': 'normal', 'animation': 'scratch'},
 	'splash':     {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'water',  'animation': 'splash'},
 	'fire':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'fire',   'animation': 'fire'},
 	'explosion':  {'target': 'opponent', 'amount': 2,    'cost': 90, 'element': 'fire',   'animation': 'explosion'},
-	'annihilate': {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'fire',   'animation': 'explosion'},
+	'annihilate': {'target': 'opponent', 'amount': 3,    'cost': 30, 'element': 'fire',   'animation': 'explosion'},
 	'ice':        {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'water',  'animation': 'ice'},
 }

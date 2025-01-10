@@ -4,6 +4,9 @@ from os.path import join
 from sprites import Sprite, AnimatedSprite
 from entities import Player, Character
 from groups import AllSprites
+from dialog import DialogTree
+from game_data import *
+from dialog import DialogSprite
 
 from support import *
 
@@ -18,7 +21,8 @@ class Game:
 
         # groups
         self.all_sprites = AllSprites()
-
+        self.character_Sprites = pygame.sprite.Group()
+        
         # Importiere Assets
         self.import_assets()
 
@@ -35,6 +39,9 @@ class Game:
             "water": import_folder("..", "graphics", "tilesets", "water"),
             "coast": coast_importer(24, 12, "..", "graphics", "tilesets", "coast"),
             "characters": all_character_import("..", "graphics", "characters"),
+        }
+        self.fonts = {
+            'dialog': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 30)
         }
 
     def setup(self, tmx_map, player_start_pos):
@@ -60,7 +67,8 @@ class Game:
                 Character(
                     pos=(obj.x, obj.y),
                     frames=self.overworld_frames["characters"][obj.properties['graphic']],
-                    groups=self.all_sprites,
+                    groups=(self.all_sprites,self.character_Sprites),
+                    # character_data = TRAINER_DATA[obj.properties['character_id']]
                 )
 
         # Water
@@ -81,6 +89,22 @@ class Game:
                 self.all_sprites,
             )
 
+    def input(self):
+        keys = pygame.key.get_just_pressed()
+        if keys[pygame.K_SPACE]:
+            for character in self.character_Sprites:
+             if check_connection(100, self.player, character):
+                # Setze die message hier, wenn die Bedingung erfüllt ist
+                message = '\n'.join((
+                    'Ich bin Vertriebler.',
+                    'Ich habe dual Wirtschaftsinformatik Sales & Consulting studiert.',
+                    'Jetzt bin ich in Neukundenaquise und Kundenbetreeung tätig.'
+                ))
+                # Erstelle die DialogSprite-Instanz nur, wenn message existiert
+                self.current_dialog = DialogSprite(message, self.player, self.all_sprites, self.fonts['dialog'])
+                    
+    def create_dialog(self, character):
+        DialogTree(character, self.player, self.all_sprites, self.fonts['dialog'])
     # run loop
     def run(self):
         # Setup wird nun hier aufgerufen, nachdem alle Variablen initialisiert wurden
@@ -96,6 +120,7 @@ class Game:
                     exit()
 
             # game logic
+            self.input()
             self.all_sprites.update(dt)
             self.display_surface.fill("black")
             self.all_sprites.draw(self.player.rect.center)  # Bezieht sich auf den Player

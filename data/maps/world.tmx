@@ -306,7 +306,7 @@
   <object id="14" name="Character" x="3648" y="3776">
    <properties>
     <property name="change_direction" type="bool" value="true"/>
-    <property name="character_id" value="Mitarbeiter_Anzug"/>
+    <property name="character_id" value="o1"/>
     <property name="direction" value="down"/>
     <property name="graphic" value="straw"/>
     <property name="radius" value="400"/>

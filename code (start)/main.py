@@ -2,7 +2,7 @@ from settings import *
 from pytmx.util_pygame import load_pygame
 from os.path import join
 from sprites import Sprite, AnimatedSprite
-from entities import Player
+from entities import Player, Character
 from groups import AllSprites
 
 from support import *
@@ -19,14 +19,17 @@ class Game:
         # groups
         self.all_sprites = AllSprites()
 
+        # Importiere Assets
         self.import_assets()
-        self.setup(self.tmx_maps["world"], "house")
+
+        # Verwalte alle notwendigen Attribute
+        self.player = None
+        self.setup_done = False  # Flag, um zu prüfen, ob Setup durchgeführt wurde
 
     def import_assets(self):
         self.tmx_maps = {
             "world": load_pygame(join("..", "data", "maps", "world.tmx")),
             "hospital": load_pygame(join("..", "data", "maps", "hospital.tmx")),
-            "house": load_pygame(join("..", "data", "maps", "house.tmx"))
         }
         self.overworld_frames = {
             "water": import_folder("..", "graphics", "tilesets", "water"),
@@ -35,25 +38,32 @@ class Game:
         }
 
     def setup(self, tmx_map, player_start_pos):
-        # Terrain und Tarrain top Setup
-        for layer in ["Terrain", "Terrain Top", "Häuser"]:
+        # Terrain und Terrain Top Setup
+        for layer in ["Terrain", "Terrain Top"]:
             for x, y, surf in tmx_map.get_layer_by_name(layer).tiles():
                 Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites)
 
-        # objects
+        # Objects
         for obj in tmx_map.get_layer_by_name("Objects"):
             Sprite((obj.x, obj.y), obj.image, self.all_sprites)
 
-        # entities
+        # Entities
         for obj in tmx_map.get_layer_by_name("Entities"):
-            if obj.name == "Player" and obj.properties["pos"] == player_start_pos:
-                self.player = Player(
+            if obj.name == "Player":
+                if obj.properties["pos"] == player_start_pos:
+                    self.player = Player(
+                        pos=(obj.x, obj.y),
+                        frames=self.overworld_frames["characters"]["player"],
+                        groups=self.all_sprites,
+                    )
+            else:
+                Character(
                     pos=(obj.x, obj.y),
                     frames=self.overworld_frames["characters"]["player"],
                     groups=self.all_sprites,
                 )
 
-        # water
+        # Water
         for obj in tmx_map.get_layer_by_name("Water"):
             for x in range(int(obj.x), int(obj.x + obj.width), TILE_SIZE):
                 for y in range(int(obj.y), int(obj.y + obj.height), TILE_SIZE):
@@ -61,7 +71,7 @@ class Game:
                         (x, y), self.overworld_frames["water"], self.all_sprites
                     )
 
-        # coast
+        # Coast
         for obj in tmx_map.get_layer_by_name("Coast"):
             terrain = obj.properties["terrain"]
             side = obj.properties["side"]
@@ -73,6 +83,11 @@ class Game:
 
     # run loop
     def run(self):
+        # Setup wird nun hier aufgerufen, nachdem alle Variablen initialisiert wurden
+        if not self.setup_done:
+            self.setup(self.tmx_maps["world"], "house")
+            self.setup_done = True
+
         while True:
             dt = self.clock.tick() / 1000
             for event in pygame.event.get():
@@ -83,7 +98,7 @@ class Game:
             # game logic
             self.all_sprites.update(dt)
             self.display_surface.fill("black")
-            self.all_sprites.draw(self.player.rect.center)
+            self.all_sprites.draw(self.player.rect.center)  # Bezieht sich auf den Player
             pygame.display.update()
 
 

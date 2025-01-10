@@ -37,10 +37,8 @@ class Entity(pygame.sprite.Sprite):
 class Player(Entity):
     def __init__(self, pos, frames, groups):
         super().__init__(pos, frames, groups)
-
         self.direction = vector()
 
-    # bewegung eingabe
     def input(self):
         keys = pygame.key.get_pressed()
         input_vector = vector()
@@ -55,12 +53,24 @@ class Player(Entity):
             input_vector.x += 1
         self.direction = input_vector
 
-    # bewegungsmethode und movement speed
     def move(self, dt):
         self.rect.center += self.direction * 250 * dt
 
-    # neue pos updaten
     def update(self, dt):
-        self.input()
+        self.input()  # Nur der Player sollte Eingabe haben
+        self.move(dt)
+        self.animate(dt)  
+
+
+class Character(Entity):       
+    def __init__(self, pos, frames, groups):
+        super().__init__(pos, frames, groups)
+        self.direction = vector()
+
+    # Keine Eingabemethoden für Character
+    def move(self, dt):
+        self.rect.center += self.direction * 250 * dt
+
+    def update(self, dt):
         self.move(dt)
         self.animate(dt)

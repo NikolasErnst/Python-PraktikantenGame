@@ -66,7 +66,6 @@ TRAINER_DATA = {
 		},
 	'o7': {
     #	Anfangsdialog 
-	#	'monsters': {0: ('Friolera', 25), 1: ('Gulfin', 20), 2: ('Atrox',24), 3: ('Finiette', 30)},
 		'dialog': {
 			'default': ['Herzlich Willkommen auf dem Campus der Atruvia AG!', 'Du kannst dich hier frei bewegen.', 'Auf dem Campus sind Mitarbeiter beschäftigt.', 'Sprich sie an, um zu erfahren was ihre Aufgaben sind.', 'Danach werden sie deinem Team hinzugefügt.', 'Heute gibt es einige Probleme und Störungen.', 'Diese musst du aufspüren und identfizieren.',
                'Wenn du das Problem identifiziert hast, musst du es mit dem passenden Mitarbeiter lösen.', 'Nach erfolgreichem Lösen aller Probleme erreichst du den Endboss.', 'Dort musst du Martin Beyer von deiner Festanstellung bei Atruvia überzeugen.', 'Viel Erfolg!'], 

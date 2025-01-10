@@ -39,7 +39,7 @@ class Game:
 
     def setup(self, tmx_map, player_start_pos):
         # Terrain und Terrain Top Setup
-        for layer in ["Terrain", "Terrain Top"]:
+        for layer in ["Terrain", "Terrain Top", "Häuser"]:
             for x, y, surf in tmx_map.get_layer_by_name(layer).tiles():
                 Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites)
 
@@ -59,7 +59,7 @@ class Game:
             else:
                 Character(
                     pos=(obj.x, obj.y),
-                    frames=self.overworld_frames["characters"]["player"],
+                    frames=self.overworld_frames["characters"][obj.properties['graphic']],
                     groups=self.all_sprites,
                 )
 

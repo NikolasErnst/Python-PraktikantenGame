@@ -52,7 +52,7 @@
   </object>
  </objectgroup>
  <objectgroup id="6" name="Coast"/>
- <objectgroup id="7" name="Water"/>
+ <objectgroup id="7" name="water"/>
  <objectgroup id="8" name="Monsters"/>
  <objectgroup id="9" name="Collisions">
   <object id="13" x="54.0322" y="141.886" width="395.136" height="302.333"/>

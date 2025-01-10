@@ -45,7 +45,7 @@
   </object>
  </objectgroup>
  <objectgroup id="6" name="Coast"/>
- <objectgroup id="7" name="Water"/>
+ <objectgroup id="7" name="water"/>
  <objectgroup id="8" name="Monsters"/>
  <objectgroup id="9" name="Collisions">
   <object id="13" x="-58" y="72.6667" width="118" height="685.333"/>
@@ -63,7 +63,7 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="4" name="Water" width="9" height="12">
+ <layer id="4" name="water" width="9" height="12">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,

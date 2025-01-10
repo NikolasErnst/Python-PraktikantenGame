@@ -5,7 +5,7 @@ An RPG made in Python that was inspired by Pokemon and the older Final Fantasy g
 The artwork was made by Scarloxy and you can find them here: https://scarloxy.itch.io/mpwsp01 
 
 The sounds for the project are taken from a range of sources: 
-Fire attack: https://opengameart.org/content/spell-4-fire
+ITler attack: https://opengameart.org/content/spell-4-ITler
 Slash attack: https://opengameart.org/content/knife-sharpening-slice-2
 Crack sounds: https://opengameart.org/content/5-break-crunch-impacts
 Overworld music: https://opengameart.org/content/nes-overworld-theme

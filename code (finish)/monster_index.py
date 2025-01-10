@@ -195,7 +195,7 @@ class MonsterIndex:
 
 		# abilities 
 		ability_rect = stats_rect.copy().move_to(left = sides['right'])
-		ability_text_surf = self.fonts['regular'].render('Ability', False, COLORS['white'])
+		ability_text_surf = self.fonts['regular'].render('Fähigkeiten', False, COLORS['white'])
 		ability_text_rect = ability_text_surf.get_frect(bottomleft = ability_rect.topleft)
 		self.display_surface.blit(ability_text_surf, ability_text_rect)
 

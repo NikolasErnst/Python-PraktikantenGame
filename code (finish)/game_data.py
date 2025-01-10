@@ -264,40 +264,40 @@ TRAINER_DATA = {
 
 MONSTER_DATA = {
 	'Der Vertriebler': {
-		'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-		'abilities': {0: 'scratch', 5: 'spark'},
+		'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 10, 'Softwarekenntnisse': 2, 'Hardwarekenntnisse': 1, 'speed': 7},
+		'abilities': {0: 'Kaffeatem', 5: 'Anzugträger'},
 		'evolve': ('Der Vertriebler', 15)},
 	'Der Anwendungsentwickler': {
-			'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-			'abilities': {0: 'scratch', 5: 'spark'},
+			'stats': {'element': 'ITler', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 2, 'Softwarekenntnisse': 8, 'Hardwarekenntnisse': 7, 'speed': 6},
+			'abilities': {0: 'ChatGPT', 5: 'Anzugträger'},
 			'evolve': ('Der Vertriebler', 15)},
 	'Der Cyber-Defender': {
-			'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-			'abilities': {0: 'scratch', 5: 'spark'},
+			'stats': {'element': 'ITler', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 1, 'Softwarekenntnisse': 10, 'Hardwarekenntnisse': 9, 'speed': 3},
+			'abilities': {0: 'Heimlich im Darkweb', 5: 'Anzugträger'},
 			'evolve': ('Der Vertriebler', 15)},
  	'Der Softwareengineer': {
-			'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-			'abilities': {0: 'scratch', 5: 'spark'},
+			'stats': {'element': 'ITler', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 2, 'Softwarekenntnisse': 10, 'Hardwarekenntnisse': 8, 'speed': 3},
+			'abilities': {0: 'Kaffeatem', 5: 'Anzugträger'},
 			'evolve': ('Der Vertriebler', 15)},
   	'Der Systemintegrator': {
-			'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-			'abilities': {0: 'scratch', 5: 'spark'},
+			'stats': {'element': 'ITler', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 2, 'Softwarekenntnisse': 3, 'Hardwarekenntnisse': 1, 'speed': 1},
+			'abilities': {0: 'Kaffeatem', 5: 'Anzugträger'},
 			'evolve': ('Der Vertriebler', 15)},
    	'Der Data-Scientist': {
-			'stats': {'element': 'BWL', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 4, 'defense': 8, 'recovery': 1, 'speed': 1},
-			'abilities': {0: 'scratch', 5: 'spark'},
+			'stats': {'element': 'ITler', 'max_health': 15, 'max_energy': 17, 'Kommunikation': 2, 'Softwarekenntnisse': 6, 'Hardwarekenntnisse': 9, 'speed': 1},
+			'abilities': {0: 'Kaffeatem', 5: 'Anzugträger'},
 			'evolve': ('Der Vertriebler', 15)},
 }
 
 attack_DATA = {
-	'burn':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'fire',   'animation': 'fire'},
+	'Heimlich im Darkweb':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'ITler',   'animation': 'ITler'},
 	'heal':       {'target': 'player',   'amount': -1.2, 'cost': 600, 'element': 'BWL',  'animation': 'green'},
 	'battlecry':  {'target': 'player',   'amount': -1.4, 'cost': 20, 'element': 'normal', 'animation': 'green'},
-	'spark':      {'target': 'opponent', 'amount': 1.1,  'cost': 20, 'element': 'fire',   'animation': 'fire'},
-	'scratch':    {'target': 'opponent', 'amount': 1.2,  'cost': 20, 'element': 'normal', 'animation': 'scratch'},
-	'splash':     {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'water',  'animation': 'splash'},
-	'fire':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'fire',   'animation': 'fire'},
-	'explosion':  {'target': 'opponent', 'amount': 2,    'cost': 90, 'element': 'fire',   'animation': 'explosion'},
-	'annihilate': {'target': 'opponent', 'amount': 3,    'cost': 30, 'element': 'fire',   'animation': 'explosion'},
+	'Anzugträger':      {'target': 'opponent', 'amount': 1.1,  'cost': 20, 'element': 'ITler',   'animation': 'ITler'},
+	'Kaffeatem':    {'target': 'opponent', 'amount': 1.2,  'cost': 20, 'element': 'normal', 'animation': 'Kaffeatem'},
+	'ChatGPT':     {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'water',  'animation': 'ChatGPT'},
+	'ITler':       {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'ITler',   'animation': 'ITler'},
+	'explosion':  {'target': 'opponent', 'amount': 2,    'cost': 90, 'element': 'ITler',   'animation': 'explosion'},
+	'annihilate': {'target': 'opponent', 'amount': 3,    'cost': 30, 'element': 'ITler',   'animation': 'explosion'},
 	'ice':        {'target': 'opponent', 'amount': 2,    'cost': 15, 'element': 'water',  'animation': 'ice'},
 }

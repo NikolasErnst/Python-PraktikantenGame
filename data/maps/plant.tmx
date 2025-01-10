@@ -274,5 +274,5 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="10" name="Water" locked="1"/>
+ <objectgroup id="10" name="water" locked="1"/>
 </map>

@@ -31,9 +31,9 @@ class Monster:
 			'health': self.get_stat('max_health'),
 			'energy': self.get_stat('max_energy'),
 			'Kommunikation': self.get_stat('Kommunikation'),
-			'defense': self.get_stat('defense'),
+			'Softwarekenntnisse': self.get_stat('Softwarekenntnisse'),
 			'speed': self.get_stat('speed'),
-			'recovery': self.get_stat('recovery'),
+			'Hardwarekenntnisse': self.get_stat('Hardwarekenntnisse'),
 		}
 
 	def get_abilities(self, all  = True):

@@ -15,7 +15,7 @@ COLORS = {
 	'gray': '#3a373b',
 	'gold': '#ffd700',
 	'light-gray': '#4b484d',
-	'fire':'#f8a060',
+	'ITler':'#f8a060',
 	'water':'#50b0d8',
 	'BWL': '#64a990', 
 	'black': '#000000', 

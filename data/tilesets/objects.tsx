@@ -35,7 +35,7 @@
   <image width="64" height="128" source="../../graphics/objects/teal_tree_small.png"/>
  </tile>
  <tile id="12">
-  <image width="448" height="448" source="../../graphics/objects/arean_fire.png"/>
+  <image width="448" height="448" source="../../graphics/objects/arean_ITler.png"/>
  </tile>
  <tile id="13">
   <image width="448" height="448" source="../../graphics/objects/arena_BWL.png"/>

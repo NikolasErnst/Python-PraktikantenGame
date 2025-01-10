@@ -179,5 +179,5 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="10" name="Water"/>
+ <objectgroup id="10" name="water"/>
 </map>

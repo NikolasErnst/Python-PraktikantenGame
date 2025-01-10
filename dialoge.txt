@@ -1,0 +1,116 @@
+Vertriebler 
+Ich bin Vertriebler.
+Ich habe Dual Wirtschaftsinformatik Sales & Consulting studiert. 
+Jetzt bin ich in Neukundenaquise und Kundenbetreuung tätig.
+
+Anwendungsentwickler 
+Ich bin Anwendungsentwickler.
+Ich habe eine Ausbildung zum Anwendungsentwickler gemacht.
+Jetzt fixe ich Bugs und entwickle neue Features
+
+Data Scientist 
+Ich bin Data Scientist.
+Ich habe Dual Data Science Studiert.
+Jetzt verarbeite ich Daten und werte sie aus.
+
+Cyber Defender
+Ich bin Cyber Defender.
+Ich habe Dual Cyber Security studiert. 
+Jetzt bin ich im Monitoring tätig durchforste das Darkweb
+
+Softwareengineer 
+Ich bin Softwareengineer.
+Ich habe Dual Wirtschaftsinformatik Softwareengineering studiert.
+Jetzt konzipiere ich Systeme und halte sie am laufen. 
+ 
+Systemintegrator 
+Ich bin Systemintegrator. 
+Ich habe eine Ausbildung für Fachinformatik für Systemintegration gemacht. 
+Jetzt mache ich den Support für Anwendungen. 
+
+
+
+
+
+
+
+
+
+Anfangsdialog:
+
+
+Hallo und Herzlich Willkommen auf dem Campus der Atruvia AG. Wie heißt du denn? 
+…
+Du kannst dich hier frei bewegen. Auf dem Campus sind Mitarbeiter beschäftigt. Sprich sie an, um zu erfahren, wer sie sind und was sie machen. Danach kannst du sie zu deinem Team hinzufügen.
+
+Außerdem gibt es heute ein paar Probleme und Störungen. Diese musst du Aufspüren und Identifizieren. 
+
+Wenn du das Problem identifiziert hast, musst du die passenden Mitarbeiter aus deinem Team auswählen, um es zu lösen. 
+
+Wenn du alle Mitarbeiter eingesammelt und alle Probleme und Störungen behoben hast, musst du den Endboss, Martin Beyer von deiner Festanstellung überzeugen. 
+
+Gutes Gelingen.
+
+ Kämpfe 
+
+
+Problem 1: 
+
+Korrekter Ausgang:
+Du stößt auf einen kaputten Computer.
+Du schickst den FISI zum Lösen des Problems
+Der Kaputte Computer setzt einen Kurzschluss ein
+Der FISI setzt IT-Support und Hardwarekentnisse ein 
+Der Einsatz war erfolgreich. Der Computer wurde repariert. 
+
+Falscher Ausgang
+Du stößt auf einen kaputten Computer.
+Du schickst den … zum Lösen des Problems
+Der Kaputte Computer setzt einen Kurzschluss ein
+Der … setzt … ein 
+Der Einsatz war nicht erfolgreich. Der Computer bleibt kaputt. 
+
+Problem 2: 
+Korrekt:
+Du stößt auf einen wütenden Kunde.
+Du schickst den Vertriebler zum Lösen des Problems.
+Der Kunde setzt ein Gespräch bei Tageslicht ein. 
+Der Vertriebler setzt seinen Kaffeeatem, Anzug und Kommunikation ein.
+Der Einsatz war erfolgreich. Der Kunde ist wieder zufrieden
+Falsch
+Du stößt auf einen wütenden Kunde.
+Du schickst den … zum Lösen des Problems.
+Der Kunde setzt ein Gespräch bei Tageslicht ein. 
+Der … setzt … ein.
+Der Einsatz war nicht erfolgreich. Der Kunde ist nicht zufrieden
+
+Problem 3
+Korrekt:
+Du stößt auf einen Cyber Angriff.
+Du setzt den Cyberdefender ein.
+Der Cyber Angriff setzt einen Firewall Hack ein.
+Der Cyber Defender setzt seine Softwarekenntnisse ein.
+Der Einsatz war erfolgreich. Der Angriff wurde abgewehrt. 
+
+Problem 4
+
+Du stößt auf einen Systemfehler. 
+Du setzt den Softwareengineer ein. 
+Der Systemfehler setzt nicht mehr kommunizierende Systeme ein.
+Der Softwareengineer setzt Seine Softwarekenntnisse, Heavy-Metal Shirt und sein Code Lexikon ein. 
+Der Einsatz war erfolgreich. Die Systeme kommunizieren wieder.
+
+Problem 5
+
+Du stößt auf Daten mit schlechter Qualität.
+Du setzt den Data-Scientist ein. 
+Die schlechte Datenqualität setzt falsche Rechtschreibung und fehlende Produktnummern ein.
+Der Data-Scientist setzt seine Excel Kenntnisse und Überqualifikation ein. 
+Der Einsatz war erfolgreich. Die Daten haben nun eine gute Qualität. 
+Problem 6
+
+Du stößt auf einen Bug.
+Du setzt den Anwendungsentwickler ein.
+Der Bug setzt Corrupted Code ein.
+Der Anwendungsentwickler setzt seine Softwarekenntnisse und ChatGPT ein. 
+Der Einsatz war erfolghreich. Der Bug ist behoben. 

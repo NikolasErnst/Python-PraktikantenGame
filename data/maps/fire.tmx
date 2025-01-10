@@ -103,7 +103,7 @@
     <property name="change_direction" type="bool" value="true"/>
     <property name="character_id" value="fx"/>
     <property name="direction" value="down"/>
-    <property name="graphic" value="fire_boss"/>
+    <property name="graphic" value="ITler_boss"/>
     <property name="radius" value="0"/>
    </properties>
    <point/>
@@ -202,10 +202,10 @@
  <objectgroup id="5" name="Transition">
   <object id="851" x="644.833" y="1976.33" width="114.917" height="3.83333">
    <properties>
-    <property name="pos" value="fire"/>
+    <property name="pos" value="ITler"/>
     <property name="target" value="world"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="10" name="Water" visible="0" locked="1"/>
+ <objectgroup id="10" name="water" visible="0" locked="1"/>
 </map>

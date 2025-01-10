@@ -175,15 +175,15 @@ class Battle:
 		target_element = target_sprite.monster.element
 
 		# double attack
-		if attack_element == 'fire'  and target_element == 'BWL' or \
-		   attack_element == 'water' and target_element == 'fire'  or \
+		if attack_element == 'ITler'  and target_element == 'BWL' or \
+		   attack_element == 'water' and target_element == 'ITler'  or \
 		   attack_element == 'BWL' and target_element == 'water':
 			amount *= 2
 
 		# halve attack
-		if attack_element == 'fire'  and target_element == 'water' or \
+		if attack_element == 'ITler'  and target_element == 'water' or \
 		   attack_element == 'water' and target_element == 'BWL' or \
-		   attack_element == 'BWL' and target_element == 'fire':
+		   attack_element == 'BWL' and target_element == 'ITler':
 			amount *= 0.5
 
 		target_defense = 1 - target_sprite.monster.get_stat('defense') / 2000

@@ -21,7 +21,7 @@ class Game:
 	def __init__(self):
 		pygame.init()
 		self.display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-		pygame.display.set_caption('Monster Hunter')
+		pygame.display.set_caption('Truvimon')
 		self.clock = pygame.time.Clock()
 		self.encounter_timer = Timer(2000, func = self.monster_encounter)
 
@@ -109,7 +109,7 @@ class Game:
 				Sprite((x * TILE_SIZE, y * TILE_SIZE), surf, self.all_sprites, WORLD_LAYERS['bg'])
 
 		# water 
-		for obj in tmx_map.get_layer_by_name('Water'):
+		for obj in tmx_map.get_layer_by_name('water'):
 			for x in range(int(obj.x), int(obj.x + obj.width), TILE_SIZE):
 				for y in range(int(obj.y), int(obj.y + obj.height), TILE_SIZE):
 					AnimatedSprite((x,y), self.overworld_frames['water'], self.all_sprites, WORLD_LAYERS['water'])

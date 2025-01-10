@@ -269,7 +269,7 @@
  <objectgroup id="5" name="Transition">
   <object id="1033" x="647.875" y="1952.42" width="114.917" height="3.83333">
    <properties>
-    <property name="pos" value="plant"/>
+    <property name="pos" value="BWL"/>
     <property name="target" value="world"/>
    </properties>
   </object>

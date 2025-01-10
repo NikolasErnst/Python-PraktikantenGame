@@ -25,22 +25,21 @@ class Game:
 		self.clock = pygame.time.Clock()
 		self.encounter_timer = Timer(2000, func = self.monster_encounter)
 
-		# player monsters 
+        # player monsters 
 		self.player_monsters = {
-			0: Monster('Ivieron', 32),
-			1: Monster('Atrox', 15),
-			2: Monster('Cindrill', 16),
-			3: Monster('Atrox', 10),
-			4: Monster('Sparchu', 11),
-			5: Monster('Gulfin', 9),
-			6: Monster('Jacana', 10),
-		}
+			0: Monster('Der Vertriebler', 1),
+            1: Monster('Der Anwendungsentwickler', 1),
+            2: Monster('Der Cyber-Defender', 1),
+            3: Monster('Der Softwareengineer', 1),
+            4: Monster('Der Systemintegrator', 1),
+            5: Monster('Der Data-Scientist', 1),
+		}  
 		for monster in self.player_monsters.values():
 			monster.xp += randint(0,monster.level * 100)
 		self.test_monsters = {
-			0: Monster('Finsta', 15),
-			1: Monster('Pouch', 13),
-			2: Monster('Larvea', 12),
+			0: Monster('Der Vertriebler', 1),
+            1: Monster('Der Anwendungsentwickler', 1),
+            2: Monster('Der Cyber-Defender', 1),
 		}
 
 

@@ -204,7 +204,7 @@ class MonsterStatsSprite(pygame.sprite.Sprite):
 		if not self.monster_sprite.groups():
 			self.kill()
 
-class AttackSprite(AnimatedSprite):
+class attackSprite(AnimatedSprite):
 	def __init__(self, pos, frames, groups):
 		super().__init__(pos, frames, groups, BATTLE_LAYERS['overlay'])
 		self.rect.center = pos

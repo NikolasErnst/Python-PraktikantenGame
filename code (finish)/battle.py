@@ -1,7 +1,7 @@
 from settings import * 
-from sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite, AttackSprite, TimedSprite
+from sprites import MonsterSprite, MonsterNameSprite, MonsterLevelSprite, MonsterStatsSprite, MonsterOutlineSprite, attackSprite, TimedSprite
 from groups import BattleSprites
-from game_data import ATTACK_DATA
+from game_data import attack_DATA
 from support import draw_bar
 from timer import Timer
 from random import choice
@@ -119,7 +119,7 @@ class Battle:
 				if self.selection_mode == 'attacks':
 					self.selection_mode = 'target'
 					self.selected_attack = self.current_monster.monster.get_abilities(all = False)[self.indexes['attacks']]
-					self.selection_side = ATTACK_DATA[self.selected_attack]['target']
+					self.selection_side = attack_DATA[self.selected_attack]['target']
 
 				if self.selection_mode == 'general':
 					if self.indexes['general'] == 0:
@@ -167,23 +167,23 @@ class Battle:
 			monster_sprite.monster.paused = True if option == 'pause' else False
 
 	def apply_attack(self, target_sprite, attack, amount):
-		AttackSprite(target_sprite.rect.center, self.monster_frames['attacks'][ATTACK_DATA[attack]['animation']], self.battle_sprites)
-		self.sounds[ATTACK_DATA[attack]['animation']].play()
+		attackSprite(target_sprite.rect.center, self.monster_frames['attacks'][attack_DATA[attack]['animation']], self.battle_sprites)
+		self.sounds[attack_DATA[attack]['animation']].play()
 
 		# get correct attack damage amount (defense, element)
-		attack_element = ATTACK_DATA[attack]['element']
+		attack_element = attack_DATA[attack]['element']
 		target_element = target_sprite.monster.element
 
 		# double attack
-		if attack_element == 'fire'  and target_element == 'plant' or \
+		if attack_element == 'fire'  and target_element == 'BWL' or \
 		   attack_element == 'water' and target_element == 'fire'  or \
-		   attack_element == 'plant' and target_element == 'water':
+		   attack_element == 'BWL' and target_element == 'water':
 			amount *= 2
 
 		# halve attack
 		if attack_element == 'fire'  and target_element == 'water' or \
-		   attack_element == 'water' and target_element == 'plant' or \
-		   attack_element == 'plant' and target_element == 'fire':
+		   attack_element == 'water' and target_element == 'BWL' or \
+		   attack_element == 'BWL' and target_element == 'fire':
 			amount *= 0.5
 
 		target_defense = 1 - target_sprite.monster.get_stat('defense') / 2000
@@ -221,7 +221,7 @@ class Battle:
 
 	def opponent_attack(self):
 		ability = choice(self.current_monster.monster.get_abilities())
-		random_target = choice(self.opponent_sprites.sprites()) if ATTACK_DATA[ability]['target'] == 'player' else choice(self.player_sprites.sprites())
+		random_target = choice(self.opponent_sprites.sprites()) if attack_DATA[ability]['target'] == 'player' else choice(self.player_sprites.sprites())
 		self.current_monster.activate_attack(random_target, ability)
 
 	def check_end_battle(self):
@@ -274,7 +274,7 @@ class Battle:
 
 			# text 
 			if selected:
-				element = ATTACK_DATA[ability]['element']
+				element = attack_DATA[ability]['element']
 				text_color = COLORS[element] if element!= 'normal' else COLORS['black']
 			else:
 				text_color = COLORS['light']

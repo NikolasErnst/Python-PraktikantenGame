@@ -1,4 +1,4 @@
-from game_data import MONSTER_DATA, ATTACK_DATA
+from game_data import MONSTER_DATA, attack_DATA
 
 class Monster:
 	def __init__(self, name, level):

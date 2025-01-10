@@ -1,4 +1,4 @@
-from game_data import MONSTER_DATA, ATTACK_DATA
+from game_data import MONSTER_DATA, attack_DATA
 from random import randint
 
 class Monster:
@@ -30,7 +30,7 @@ class Monster:
 		return {
 			'health': self.get_stat('max_health'),
 			'energy': self.get_stat('max_energy'),
-			'attack': self.get_stat('attack'),
+			'Kommunikation': self.get_stat('Kommunikation'),
 			'defense': self.get_stat('defense'),
 			'speed': self.get_stat('speed'),
 			'recovery': self.get_stat('recovery'),
@@ -40,7 +40,7 @@ class Monster:
 		if all:
 			return [ability for lvl, ability in self.abilities.items() if self.level >= lvl]
 		else:
-			return [ability for lvl, ability in self.abilities.items() if self.level >= lvl and ATTACK_DATA[ability]['cost'] < self.energy]
+			return [ability for lvl, ability in self.abilities.items() if self.level >= lvl and attack_DATA[ability]['cost'] < self.energy]
 
 	def get_info(self):
 		return (
@@ -49,11 +49,11 @@ class Monster:
 			(self.initiative, 100)
 			)
 
-	def reduce_energy(self, attack):
-		self.energy -= ATTACK_DATA[attack]['cost']
+	def reduce_energy(self, Kommunikation):
+		self.energy -= attack_DATA[Kommunikation]['cost']
 
-	def get_base_damage(self, attack):
-		return self.get_stat('attack') * ATTACK_DATA[attack]['amount']
+	def get_base_damage(self, Kommunikation):
+		return self.get_stat('Kommunikation') * attack_DATA[Kommunikation]['amount']
 
 	def update_xp(self, amount):
 		if self.level_up - self.xp > amount:

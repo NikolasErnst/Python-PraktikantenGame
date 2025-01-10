@@ -1,6 +1,6 @@
 from settings import * 
 from support import draw_bar
-from game_data import MONSTER_DATA, ATTACK_DATA
+from game_data import MONSTER_DATA, attack_DATA
 
 class MonsterIndex:
 	def __init__(self, monsters, fonts, monster_frames):
@@ -23,7 +23,7 @@ class MonsterIndex:
 
 		# list 
 		self.visible_items = 6
-		self.list_width = self.main_rect.width * 0.3
+		self.list_width = self.main_rect.width * 0.4
 		self.item_height = self.main_rect.height / self.visible_items
 		self.index = 0
 		self.selected_index = None
@@ -71,7 +71,7 @@ class MonsterIndex:
 			top = self.main_rect.top + index * self.item_height + v_offset
 			item_rect = pygame.FRect(self.main_rect.left,top,self.list_width,self.item_height)
 			
-			text_surf = self.fonts['regular'].render(monster.name, False, text_color)
+			text_surf = self.fonts['small'].render(monster.name, False, text_color)
 			text_rect = text_surf.get_frect(midleft = item_rect.midleft + vector(90, 0))
 
 			icon_surf = self.icon_frames[monster.name]
@@ -110,7 +110,7 @@ class MonsterIndex:
 		pygame.draw.rect(self.display_surface, COLORS['dark'], rect, 0, 12,0, 12,0)
 
 		# monster display
-		top_rect = pygame.FRect(rect.topleft, (rect.width, rect.height * 0.4))
+		top_rect = pygame.FRect(rect.topleft, (rect.width, rect.height * 0.5))
 		pygame.draw.rect(self.display_surface, COLORS[monster.element], top_rect, 0,0,0,12)
 
 		# monster animation 
@@ -120,7 +120,7 @@ class MonsterIndex:
 		self.display_surface.blit(monster_surf, monster_rect)
 
 		# name 
-		name_surf = self.fonts['bold'].render(monster.name, False, COLORS['white'])
+		name_surf = self.fonts['regular'].render(monster.name, False, COLORS['white'])
 		name_rect = name_surf.get_frect(topleft = top_rect.topleft + vector(10,10))
 		self.display_surface.blit(name_surf, name_rect)
 
@@ -184,7 +184,7 @@ class MonsterIndex:
 			self.display_surface.blit(icon_surf, icon_rect)
 
 			# text 
-			text_surf = self.fonts['regular'].render(stat, False, COLORS['white'])
+			text_surf = self.fonts['small'].render(stat, False, COLORS['white'])
 			text_rect = text_surf.get_frect(topleft = icon_rect.topleft + vector(30,-10))
 			self.display_surface.blit(text_surf, text_rect)
 
@@ -200,7 +200,7 @@ class MonsterIndex:
 		self.display_surface.blit(ability_text_surf, ability_text_rect)
 
 		for index, ability in enumerate(monster.get_abilities()):
-			element = ATTACK_DATA[ability]['element']
+			element = attack_DATA[ability]['element']
 
 			text_surf = self.fonts['regular'].render(ability, False, COLORS['black'])
 			x = ability_rect.left + index % 2 * ability_rect.width / 2

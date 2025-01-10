@@ -18,13 +18,13 @@ class Player(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
         input_vector = vector()
 
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             input_vector.y -= 1
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             input_vector.y += 1
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             input_vector.x -= 1
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_d]:
             input_vector.x += 1
         self.direction = input_vector
 

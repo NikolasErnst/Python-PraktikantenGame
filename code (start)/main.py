@@ -4,8 +4,9 @@ from os.path import join
 from sprites import Sprite, AnimatedSprite
 from entities import Player, Character
 from groups import AllSprites
-
 from support import *
+from dialog import DialogTree
+from game_data import *
 
 
 class Game:
@@ -18,7 +19,7 @@ class Game:
 
         # groups
         self.all_sprites = AllSprites()
-
+        self.dialog_tree = None
         # Importiere Assets
         self.import_assets()
 
@@ -35,6 +36,10 @@ class Game:
             "water": import_folder("..", "graphics", "tilesets", "water"),
             "coast": coast_importer(24, 12, "..", "graphics", "tilesets", "coast"),
             "characters": all_character_import("..", "graphics", "characters"),
+        }
+            #Schriftart
+        self.fonts = {
+            'dialog': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 30)
         }
 
     def setup(self, tmx_map, player_start_pos):
@@ -81,6 +86,23 @@ class Game:
                 self.all_sprites,
             )
 
+    def input(self):
+        if not self.dialog_tree:
+            keys = pygame.key_get_just_pressed()
+        if keys[pygame.K_SPACE]:
+            for character in self.character_sprites:
+                if check_connections(100, self.player, character):
+                    self.player.block()#block movement while dialog
+                    self.create_dialog()#create dialog
+                    print('dialog')
+
+    def create_dialog(self, character):
+        if not self.dialog_tree:
+            self.dialog_tree = DialogTree(character, self.player, self.all_sprites, self.fonts['dialog'], self.end_dialog)
+
+    def end_dialog(self, character):
+        self.dialog_tree = None
+        self.player.unblock()
     # run loop
     def run(self):
         # Setup wird nun hier aufgerufen, nachdem alle Variablen initialisiert wurden
@@ -99,6 +121,8 @@ class Game:
             self.all_sprites.update(dt)
             self.display_surface.fill("black")
             self.all_sprites.draw(self.player.rect.center)  # Bezieht sich auf den Player
+
+            if self.dialog_tree: self.dialog_tree.update()
             pygame.display.update()
 
 

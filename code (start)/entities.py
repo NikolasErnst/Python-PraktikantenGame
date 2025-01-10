@@ -21,6 +21,7 @@ class Entity(pygame.sprite.Sprite):
         self.image = self.frames[self.get_state()][
             int(self.frame_index % len(self.frames[self.get_state()]))
         ]
+          
     #abfrage ob gelaufen wird oder idle 
     def get_state(self):
         moving = bool(self.direction)
@@ -30,6 +31,13 @@ class Entity(pygame.sprite.Sprite):
             if self.direction.y != 0:
                 self.facing_direction = "down" if self.direction.y > 0 else "up"
         return f"{self.facing_direction}{'' if moving else '_idle'}"
+    
+    def block(self):
+        self.blocked = True
+        self.direction = vector(0,0)
+
+    def unblock(self):
+        self.blocked = False
 
 
 
@@ -43,13 +51,13 @@ class Player(Entity):
         keys = pygame.key.get_pressed()
         input_vector = vector()
 
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             input_vector.y -= 1
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             input_vector.y += 1
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             input_vector.x -= 1
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_d]:
             input_vector.x += 1
         self.direction = input_vector
 
@@ -74,3 +82,6 @@ class Character(Entity):
     def update(self, dt):
         self.move(dt)
         self.animate(dt)
+
+    def get_dialog(self):
+        return self.character_data['dialog'][f"{'defeated' if self.character_data['defeated'] else 'default'}"]
